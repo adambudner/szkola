@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Lista Produktów</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f0f0f0;
+      padding: 20px;
+    }
+
+    #produkty {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .karta {
+      background-color: #fff;
+      border: 1px solid #ccc;
+      border-radius: 12px;
+      padding: 16px;
+      width: 250px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .karta h3 {
+      margin-top: 0;
+    }
+
+    .karta p {
+      margin: 8px 0;
+    }
+
+    .karta strong {
+      color: #2c3e50;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Nasze Produkty</h1>
+  <div id="produkty"></div>
+
+  <script>
+    const produkty = [
+      { nazwa: "Koszulka", cena: 49.99, opis: "Bawełniana koszulka z nadrukiem." },
+      { nazwa: "Czapka", cena: 29.99, opis: "Czapka z daszkiem w różnych kolorach." },
+      { nazwa: "Plecak", cena: 89.99, opis: "Pojemny plecak szkolny." }
+    //   { nazwa: "BUty", cena: 199.99, opis: "WYgodne buty"}
+    ];
+
+    const container = document.getElementById("produkty");
+
+    produkty.forEach(produkt => {
+      const html = `
+        <div class="karta">
+          <h3>${produkt.nazwa}</h3>
+          <p>${produkt.opis}</p>
+          <strong>Cena: ${produkt.cena.toFixed(2)} zł</strong>
+        </div>
+      `;
+      container.innerHTML += html;
+    });
+  </script>
+
+</body>
+</html>
