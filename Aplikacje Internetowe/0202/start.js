@@ -19,9 +19,25 @@ let query = `
 `;
 await conn.query(query)
 
+
+ 
+function createPerson(){
+    const Person = {
+        firstName: fakerPL.person.firstName(),
+        lastName: fakerPL.person.lastName(),
+        phone: fakerPL.phone.number()
+    }
+
+    Person.email = fakerPL.internet.email({ firstName: Person.firstName, lastName: Person.lastName });
+    return Person;
+}
+const people = Array.from({length: 5}, createPerson);
+const peopleTabTab = people.map(row => Object.values(row));
 query = `
-    insert into osoby(firstName, lastName, email, phone) values(?, ?, ?, ?)
+    insert into osoby(firstName, lastName, phone, email) values ?
 `;
+
+await conn.query(query, [peopleTabTab]);
 
 
 await conn.end();
