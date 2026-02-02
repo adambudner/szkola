@@ -1,0 +1,2 @@
+npm init -y
+npm install @types/node node mysql2 @faker-js/faker
