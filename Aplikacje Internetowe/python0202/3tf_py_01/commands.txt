@@ -1,0 +1,5 @@
+python -m venv myvenv
+cd myvenv
+Scripts\activate
+
+pip install faker 
