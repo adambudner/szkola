@@ -37,7 +37,11 @@ query = `
     insert into osoby(firstName, lastName, phone, email) values ?
 `;
 
-await conn.query(query, [peopleTabTab]);
+// await conn.query(query, [peopleTabTab]);
 
+query = `select * from osoby`;
+await conn.query(query).then( ([rows]) => {
+    console.table(rows);
+} );
 
 await conn.end();
