@@ -1,0 +1,4 @@
+myvenv/Include/
+myvenv/Lib/
+myvenv/Scripts/
+__pycache__/
