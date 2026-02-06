@@ -28,7 +28,7 @@ class MainWindow(QWidget):
         layout.addWidget(self.txt_nazwisko)
         layout.addWidget(self.area_result)
         layout.addWidget(btn_zapisz)
-
+    
 
         self.setLayout(layout)
 
