@@ -8,4 +8,4 @@ function square(arr : number[]): number[] {
     const array = arr.map(x=>x**2);
     return array;
 }
-console.log(square([2,4,6]))
+console.log(square([2,4,6]));
