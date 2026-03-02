@@ -1,8 +1,12 @@
+//Initialaizing packets
 npm init -y 
 / package.json -> "type" : "module" (enable inport/exports)
 
+// installing
 npm i --save-dev @types/node typescript jest ts-jest @types/jest nodemon
 / package.json -> "scripts"::"test":"jest"
+
+-----------------------------------------------------------------------------
 
 // create config.json
 npx tsc --init
@@ -10,14 +14,13 @@ npx tsc --init
                     "target": "es2015",
                     "types": ["jest"],
 
-
-
 // To run ts file
 npx tsc (translates form ts to js)
 //towatch npx tsc --watch
 
+-----------------------------------------------------
 
-//nodemon
+//nodemon (running after changes)
 npx nodemon xyz.js
             
 
