@@ -1,0 +1,15 @@
+npm init -y 
+/ package.json -> "type" : "module" (enable inport/exports)
+
+npm i --save-dev @types/node typescript jest ts-jest @types/jest nodemon
+/ package.json -> "scripts"::"test":"jest"
+
+// create config.json
+npx tsc --init
+/ tsconfig.json ->  "module": "es2022",
+                    "target": "es2015",
+                    "types": ["jest"],
+
+
+            
+
