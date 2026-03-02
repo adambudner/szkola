@@ -33,3 +33,5 @@ class Uczen {
 const uczen1 = new Uczen("Jan", "Kowalski", [1,2,3,4,5,6,7]);
 
 console.log(uczen1.wyswietlDaneUcznia());
+
+
