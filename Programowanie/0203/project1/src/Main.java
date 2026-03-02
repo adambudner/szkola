@@ -17,7 +17,7 @@ public class Main {
                 wynik += zbior[tempZbiorIndex];
             else if (tempZbiorIndex < 0){
                 tempZbiorIndex += 25;
-                wynik+= zbior[tempZbiorIndex];
+                wynik += zbior[tempZbiorIndex];
             }
         }
         return wynik;
@@ -33,6 +33,6 @@ public class Main {
         int przes = sc.nextInt();
 
         System.out.println("Wynik");
-        System.out.println(szyfrCezara(przes, tekst, zbior));
+        System.out.println(szyfrCezara(przes, tekst.toLowerCase(), zbior));
     }
 }
