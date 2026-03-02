@@ -11,5 +11,13 @@ npx tsc --init
                     "types": ["jest"],
 
 
+
+// To run ts file
+npx tsc (translates form ts to js)
+//towatch npx tsc --watch
+
+
+//nodemon
+npx nodemon xyz.js
             
 
