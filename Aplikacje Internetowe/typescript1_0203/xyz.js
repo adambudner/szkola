@@ -7,5 +7,12 @@ function square(arr) {
     return array;
 }
 console.log(square([2, 4, 6]));
+class Uczen {
+    constructor(imie, nazwisko, matOceny) {
+        this.imie = imie;
+        this.nazwisko = nazwisko;
+        this.matOceny = matOceny;
+    }
+}
 export {};
 //# sourceMappingURL=xyz.js.map

@@ -9,3 +9,15 @@ function square(arr : number[]): number[] {
     return array;
 }
 console.log(square([2,4,6]));
+
+class Uczen {
+    imie:string;
+    nazwisko:string;
+    matOceny:number[];
+
+    constructor(imie:string,nazwisko:string,matOceny:number[]) {
+        this.imie = imie;
+        this.nazwisko = nazwisko;
+        this.matOceny = matOceny;
+    }
+}
