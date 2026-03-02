@@ -20,4 +20,16 @@ class Uczen {
         this.nazwisko = nazwisko;
         this.matOceny = matOceny;
     }
+
+    wyswietlDaneUcznia(){
+        return `Dane ucznia: 
+        imie: ${this.imie}
+        nazwisko: ${this.nazwisko}
+        oceny: ${this.matOceny.join(", ")}
+        `;
+    }
 }
+
+const uczen1 = new Uczen("Jan", "Kowalski", [1,2,3,4,5,6,7]);
+
+console.log(uczen1.wyswietlDaneUcznia());
