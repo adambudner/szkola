@@ -7,17 +7,21 @@ public class Main {
         }
         return 0;
     }
-    static String szyfrCezara(int przesuniecie, String tekst, char[] zbior){
-        if (tekst == "") return "";
+    static String szyfrCezara(int przesuniecie, String tekst, char[] zbior) {
+        if (tekst == null || tekst.isEmpty()) return "";
 
+        int n = zbior.length;
         String wynik = "";
+
         for (int i = 0; i < tekst.length(); i++) {
-            int tempZbiorIndex = findCharIndex(zbior, tekst.charAt(i)) + przesuniecie;
-            if (tempZbiorIndex > 0)
-                wynik += zbior[tempZbiorIndex];
-            else if (tempZbiorIndex < 0){
-                tempZbiorIndex += 25;
-                wynik += zbior[tempZbiorIndex];
+            char c = tekst.charAt(i);
+            int oldIndex = findCharIndex(zbior, c);
+
+            if (oldIndex == -1) {
+                wynik += c;
+            } else {
+                int newIndex = (oldIndex + (przesuniecie % n) + n) % n;
+                wynik += zbior[newIndex];
             }
         }
         return wynik;
