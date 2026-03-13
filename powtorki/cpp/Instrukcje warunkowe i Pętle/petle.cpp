@@ -39,13 +39,13 @@ int main(){
 
 // Przyk³ad dzialania pêtli for (u¿ywamy gdy znamy iloœc wykonañ ale równie¿ w warunku mo¿emy dac inna zmienna aby wykonywala sie dooki i bedzie jakies w stosunku do tej zmiennej (i<zmienna)
 	for (int i=0; i<5; i++){
-		cout << "i jest równe: " << i << endl;
+		cout << "i jest rowne: " << i << endl;
 	}
 	
 // Przyk³ad dzia³ania pêtli while
 	int zmienna = 0;
 	while (zmienna < 5){
-		cout << "zmienna jest równa: " << zmienna << endl;
+		cout << "zmienna jest rowna: " << zmienna << endl;
 		zmienna++; // to jest to samo co zmienna = zmienna + 1;
 	}
 	
