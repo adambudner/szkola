@@ -11,6 +11,7 @@ int main(){
 		operacja do wykonania
 	}
 	// np warunek true bêdzie wykonywa³ sie w nieskoñczonosc gdyz jest prawda, a petla wykonuje sie dopoki warunek jest prawdziwy 
+	Pêtla pierw sprawdza warunek a nastêpnie wykonuje operacje
 */ 
 // PÊTLA FOR
 // sk³adnia:
@@ -35,7 +36,14 @@ int main(){
 */
 // PÊTLA DO-WHILE
 // sk³adnia:
-
+/*
+	do {
+		instrukcja do wykonania
+	} while (warunek);
+	
+	Pêtla do while wykona sie zawsze chocia¿ raz, gdy¿ z ro¿nica do zwyk³ego while, do-while pierw wykonuje instruckej a nastepnie sprawdza czy wykonywac ponownie
+	
+*/
 
 // Przyk³ad dzialania pêtli for (u¿ywamy gdy znamy iloœc wykonañ ale równie¿ w warunku mo¿emy dac inna zmienna aby wykonywala sie dooki i bedzie jakies w stosunku do tej zmiennej (i<zmienna)
 	for (int i=0; i<5; i++){
@@ -45,11 +53,16 @@ int main(){
 // Przyk³ad dzia³ania pêtli while
 	int zmienna = 0;
 	while (zmienna < 5){
-		cout << "zmienna jest rowna: " << zmienna << endl;
+		cout << "WHILE::zmienna jest rowna: " << zmienna << endl;
 		zmienna++; // to jest to samo co zmienna = zmienna + 1;
 	}
 	
 // Przyk³ad dzia³ania pêtli do-while
+	// taki sam jak while szczerze nie wiem kiedy ostatni raz uzylem tej petli, ale moze byc cos takiego:
+	int zmienna2 = 0;
+	do {
+		cout << "DOWHILE::zmienna jets rowna: " << zmienna << endl;
+	} while (zmienna < 5);
 
 // PRZERWANIA PÊTLI:
 /*
