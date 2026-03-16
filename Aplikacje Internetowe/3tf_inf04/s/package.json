@@ -1,5 +1,5 @@
 {
-  "name": "3tf_inf04",
+  "name": "s",
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
@@ -8,5 +8,10 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "description": ""
+  "description": "",
+  "dependencies": {
+    "@types/node": "^25.5.0",
+    "cors": "^2.8.6",
+    "express": "^5.2.1"
+  }
 }

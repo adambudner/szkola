@@ -7,7 +7,9 @@ import { useState, useEffect, useEffectEvent } from 'react'
 function App() {
   const [message, setMessage] = useState("wartość początkowa stanu")
   useEffect(()=>{
-    fetch("http://localhost:3333/server2")
+    fetch("http://localhost:3333/server2").
+    then(res=>res.json()). 
+    then(data=>setMessage(data.message))
   }, [])
   
   return (
