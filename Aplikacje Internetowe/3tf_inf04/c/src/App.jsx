@@ -11,10 +11,16 @@ function App() {
     then(res=>res.json()). 
     then(data=>setMessage(data.message))
   }, [])
-  
+
+  useEffect(()=>{
+    fetch("http://localhost:3333/body").
+    then(res=>res.json).
+    then(data=>setMessage(data.message))
+  }, [])  
   return (
     <>
     <h1 style={{color:'red'}}>{message}</h1>
+
     </>
   )
 }

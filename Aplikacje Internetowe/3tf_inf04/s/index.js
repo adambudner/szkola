@@ -8,6 +8,9 @@ app.use(cors());
 app.get("/server2", (req,res)=>{
     res.send({"message":"wartość z servera express 3333"})
 })
+app.get("/body", (req,res)=>{
+    res.send
+})
 
 
 app.listen(port, ()=>{
