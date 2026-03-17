@@ -1,17 +1,24 @@
-def dlugosc(tekst):
-    return len(str(tekst))
-def anagram(slowo1,slowo2):
-    return slowo1.lower().replace(" ","") == slowo2.lower().replace(" ","")
-def szyfr_cezara(tekst, klucz):
-    zaszyfrowany = ""
-def zachlanny(reszta, nominały):
-    wydane = []
-    for nominał in sorted(nominały, reverse=True):
-        while reszta >= nominał:
-            wydane.append(nominał)
-            reszta -= nominał
-    return wydane
+def dlugosc_slowa():
+    slowo = input("Podaj slowo: ")
+    print(f"Dlugosc podanego slowa to: {len(slowo)} znakow.\n")
 
+
+def anagram():
+    slowo1 = input("Podaj pierwsze slowo: ")
+    slowo2 = input("Podaj drugie slowo: ")
+
+    if len(slowo1) != len(slowo2):
+        print("Podane slowa nie sa anagramami.\n")
+        return
+
+    if sorted(slowo1) == sorted(slowo2):
+        print("Podane slowa sa anagramami\n")
+    else:
+        print("Podane slowa nie sa anagramami.\n")
+
+
+def szyfr_cezara():
+    tekst = input("Podaj slowo do zaszyfrowania: ")
 
 def main():
     print("Wybierz program do uruchomienia:")
@@ -26,17 +33,24 @@ def main():
     ''')
     while True:
         wybor = input("Wybierz program (1-7): ")
-        match (wybor):
-            case 0: 
-                exit()
-            case 1:
-                wynik = dlugosc(str())
-                print(wynik)
-            case 2:
-                wynik = anagram(str(input("Podaj słowo1: ")), str(input("Podaj słowo2:")))
-            case 3:
-                wynik = szyfr_cezara(str(input("Podaj tekst do zaszyfrowania")))
-
+        if wybor == '1':
+            dlugosc_slowa()
+        elif wybor == '2':
+            anagram()
+        elif wybor == '3':
+            szyfr_cezara()
+        elif wybor == '4':
+            metoda_zachlanna()
+        elif wybor == '5':
+            rekurencyjna()
+        elif wybor == '6':
+            bin_to_dec()
+        elif wybor == '7':
+            dec_to_bin()
+        elif wybor == '0':
+            break 
+        else:
+            print("Niepoprawny wybor\n")
 
 if __name__ == "__main__":
     main()
