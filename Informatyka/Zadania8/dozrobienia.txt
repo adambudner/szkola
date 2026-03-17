@@ -1,0 +1,7 @@
+1.Program do zliczania dlugosci slowa
+2.Sprawdzanie czy 2 podane slowa sa anagramami
+3.Funkcje szyfrujaca za pomoca szfru cezara
+4.funkcje uzywajaca metody zachlanej ->np wydawanie reszty
+5.funkcje  uzywajaca rekurencji
+6.bin-dec
+7.dec-bin
