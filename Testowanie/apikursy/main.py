@@ -3,9 +3,6 @@ import os
 from time import sleep, strftime
 from datetime import datetime
 
-def cls(): 
-    os.system("cls")
-
 def kurs(sek):
     url = "http://api.nbp.pl/api/exchangerates/tables/a/?format=json"
 
@@ -13,7 +10,7 @@ def kurs(sek):
 
     while (True):
         try:
-            cls()
+            os.system("cls")
             response = requests.get(url)
             if response.status_code == 200:
                 data = response.json()[0]
