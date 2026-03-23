@@ -10,3 +10,6 @@ form{
     gap: 10px;
     background-color: #777;
 }
+ul{
+    list-style: none;
+}

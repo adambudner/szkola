@@ -7,7 +7,8 @@ app.use(express.static(__dirname+"/public"));
 
 app.post("/p", (req,res)=>{
     const msg = req.body.msg;
-    messages.push(mssg);
+    messages.push(msg);
+    console.table(messages);
 });
 
 app.get("/g", (req,res) =>{

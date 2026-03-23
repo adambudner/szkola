@@ -16,10 +16,32 @@
         <button type="submit">prześlij</button>
     </form>
     <script>
-        const form = document.getElementsByName("form")[0];
-        form.addEventListener("submit", ()=>{
-            
+        const form = document.querySelector("form");
+        form.addEventListener('submit', (e)=>{
+            e.preventDefault();
+            const input = document.querySelector("input");
+            sendMessage(input.value);
         });
+        async function sendMessage(message){
+            const res = await fetch("http://localhost:9999/p", {
+                method: 'POST',
+                headers: {"content-type":"application/json"},
+                body: JSON.stringify({msg:message})
+            })
+        }
+        async function loadMsg() {
+            const res = await fetch("http://localhost:9999/g");
+            const data = await res.json();
+            const ul = document.querySelector("ul");
+            ul.innerHTML = "";
+            data.forEach(element => {
+                const li = document.createElement("li");
+                li.textContent = element;
+                ul.appendChild(li);
+
+            })
+        }
+        setInterval(loadMsg, 2000);
     </script>
 </body>
 </html>
