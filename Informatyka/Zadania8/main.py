@@ -19,6 +19,19 @@ def anagram():
 
 def szyfr_cezara():
     tekst = input("Podaj slowo do zaszyfrowania: ")
+    przesuniecie = int(input("Podaj przesuniecie (liczba calkowita): "))
+    zaszyfrowany_tekst = ""
+    for znak in tekst:
+        alfabet = "abcdefghijklmnopqrstuvwxyz"
+
+        if znak.isalpha():
+            stara_pozycja = alfabet.find(znak.lower())
+            nowa_pozycja = (stara_pozycja + przesuniecie) % 26
+            zaszyfrowany_tekst += alfabet[nowa_pozycja]
+        else:
+            zaszyfrowany_tekst += znak
+    print(f"Zaszyfrowany tekst: {zaszyfrowany_tekst}\n")
+    
 
 def main():
     print("Wybierz program do uruchomienia:")
