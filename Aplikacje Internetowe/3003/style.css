@@ -1,3 +1,27 @@
+*{
+    font-family: Helvetica;
+}
+body{
+    background-color: #EAEAEA;
+}
+nav, footer{
+    background-color: #625B5B;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+img{
+    width: 100%;
+}
+ul{
+    margin-left: 40px;
+    list-style: circle;
+}
+nav a{
+    
+}
+
 form{
     display: flex;
     flex-direction: column;
