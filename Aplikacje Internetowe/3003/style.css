@@ -18,8 +18,29 @@ ul{
     margin-left: 40px;
     list-style: circle;
 }
+
 nav a{
-    
+    font-weight: bold;
+    background-color: #EAEAEA;
+    color: #625B5B;
+    padding: 10px;
+    margin: 50px;
+    border-radius: 20px;
+}
+nav a:hover{
+    background-color: #625B5B;
+    color: #EAEAEA;
+    border: #EAEAEA solid 1px;
+}
+table{
+    border: #625B5B dashed 1px;
+    width: 60%;
+    margin-left: 40px;
+    text-align: center;
+}
+
+.kontrolki{
+    margin: 5px;
 }
 
 form{
