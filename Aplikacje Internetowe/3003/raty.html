@@ -32,5 +32,34 @@
         <p id="wynik">tutaj wynik skryptu</p>
     </main>
     <footer>Autor strony: 1234567890</footer>
+    <script>
+        const btn    = document.querySelector("#oblicz");
+
+        btn.addEventListener('click', (e)=>{
+
+            const react  = document.querySelector("#react").checked;
+            const js     = document.querySelector("#js").checked;
+            const raty   = document.querySelector("#raty").value;
+            const miasta = document.querySelector("#miasta").value;
+
+            e.preventDefault();
+            const wynik = document.querySelector("#wynik");
+            wynik.textContent = 
+            react + "\n" +
+            js + "\n" + 
+            raty + "\n" +
+            miasta + "\n";
+
+            let price = 0;
+            if (react) price += 5000;
+            if (js) price += 3000;
+
+
+            wynik.textContent = `Kurs odbędzie się w ${miasta}.
+            Koszt całkowity: ${price} zł
+            Płącisz ${raty} rat(y) po ${price/raty}`
+        });
+        
+    </script>
 </body>
 </html>
