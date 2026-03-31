@@ -26,10 +26,13 @@ public class Main {
                 x.charAt(x.length() - 3) == '0' &&
                 x.charAt(x.length() - 4) == '1';
     }
+    public static int znajdzNajwieksza(String[] x) {
+
+    }
 
 
     public static void main(String[] args) throws FileNotFoundException {
-        File liczbyF = new File("liczby.txt");
+        File liczbyF = new File("C:\\Users\\adamb\\Desktop\\Szkoła\\szkolaGit\\szkola\\Programowanie\\31\\untitled\\src\\liczby.txt");
         Scanner scanLiczby = new Scanner(liczbyF);
 
         String[] tabLiczby = new String[1000];
@@ -54,7 +57,10 @@ public class Main {
             if(podzielne2(x)) podzielneDwa++;
             if(podzielne8(x)) podzielneOsiem++;
         }
-        
+        System.out.println(podzielneDwa + " :Liczb jest podzielne przez dwa");
+        System.out.println(podzielneOsiem + " :Liczb jest podzielne przez osiem");
+
+//        Zad3: maxMin
 
 
     }
