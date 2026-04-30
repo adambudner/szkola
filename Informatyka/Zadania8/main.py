@@ -1,69 +1,69 @@
-def dlugosc_slowa():
-    slowo = input("Podaj slowo: ")
-    print(f"Dlugosc podanego slowa to: {len(slowo)} znakow.\n")
+def menu():
+    print("\n--- CO ROBIMY? ---")
+    print("1. Licz znaki")
+    print("2. Sprawdź anagram")
+    print("3. Szyfr Cezara")
+    print("4. Reszta (zachłannie)")
+    print("5. Silnia (rekurencja)")
+    print("6. Bin -> Dec")
+    print("7. Dec -> Bin")
+    print("0. Wyjdź")
 
+while True:
+    menu()
+    wybor = input("\nWybierz numer: ")
 
-def anagram():
-    slowo1 = input("Podaj pierwsze slowo: ")
-    slowo2 = input("Podaj drugie slowo: ")
+    if wybor == '1':
+        s = input("Daj słowo: ")
+        print("Długość:", len(s))
 
-    if len(slowo1) != len(slowo2):
-        print("Podane slowa nie sa anagramami.\n")
-        return
+    elif wybor == '2':
+        s1 = input("Słowo 1: ")
+        s2 = input("Słowo 2: ")
+        print("Anagramy?" , sorted(s1.lower()) == sorted(s2.lower()))
 
-    if sorted(slowo1) == sorted(slowo2):
-        print("Podane slowa sa anagramami\n")
-    else:
-        print("Podane slowa nie sa anagramami.\n")
+    elif wybor == '3':
+        t = input("Tekst do szyfrowania: ")
+        k = int(input("Klucz (liczba): "))
+        wynik = ""
+        for litera in t:
+            if litera.isalpha():
+                kod = ord(litera) + k
+                if litera.isupper():
+                    if kod > ord('Z'): kod -= 26
+                else:
+                    if kod > ord('z'): kod -= 26
+                wynik += chr(kod)
+            else:
+                wynik += litera
+        print("Zaszyfrowane:", wynik)
 
+    elif wybor == '4':
+        kasa = int(input("Ile reszty do wydania? "))
+        nominaly = [200, 100, 50, 20, 10, 5, 2, 1]
+        print("Wydaję:")
+        for n in nominaly:
+            if kasa >= n:
+                print(f"{n} zł x {kasa // n}")
+                kasa %= n
 
-def szyfr_cezara():
-    tekst = input("Podaj slowo do zaszyfrowania: ")
-    przesuniecie = int(input("Podaj przesuniecie (liczba calkowita): "))
-    zaszyfrowany_tekst = ""
-    for znak in tekst:
-        alfabet = "abcdefghijklmnopqrstuvwxyz"
+    elif wybor == '5':
+        def silnia(n):
+            return 1 if n <= 1 else n * silnia(n - 1)
+        liczba = int(input("Z czego silnia? "))
+        print("Wynik:", silnia(liczba))
 
-        if znak.isalpha():
-            stara_pozycja = alfabet.find(znak.lower())
-            nowa_pozycja = (stara_pozycja + przesuniecie) % 26
-            zaszyfrowany_tekst += alfabet[nowa_pozycja]
-        else:
-            zaszyfrowany_tekst += znak
-    print(f"Zaszyfrowany tekst: {zaszyfrowany_tekst}\n")
+    elif wybor == '6':
+        b = input("Podaj binarnie: ")
+        print("Dziesiętnie:", int(b, 2))
+
+    elif wybor == '7':
+        d = int(input("Podaj dziesiętnie: "))
+        print("Binarnie:", bin(d)[2:])
+
+    elif wybor == '0':
+        print("Nara!")
+        break
     
-
-def main():
-    print("Wybierz program do uruchomienia:")
-    print('''
-    1 : Program do zliczania dlugosci slowa
-    2 : Sprawdzanie czy 2 podane slowa sa anagramami
-    3 : Funkcje szyfrujaca za pomoca szfru cezara
-    4 : funkcje uzywajaca metody zachlanej ->np wydawanie reszty
-    5 : funkcje  uzywajaca rekurencji
-    6 : bin-dec
-    7 : dec-bin
-    ''')
-    while True:
-        wybor = input("Wybierz program (1-7): ")
-        if wybor == '1':
-            dlugosc_slowa()
-        elif wybor == '2':
-            anagram()
-        elif wybor == '3':
-            szyfr_cezara()
-        elif wybor == '4':
-            metoda_zachlanna()
-        elif wybor == '5':
-            rekurencyjna()
-        elif wybor == '6':
-            bin_to_dec()
-        elif wybor == '7':
-            dec_to_bin()
-        elif wybor == '0':
-            break 
-        else:
-            print("Niepoprawny wybor\n")
-
-if __name__ == "__main__":
-    main()
+    else:
+        print("Nie ma takiej opcji, spróbuj jeszcze raz.")
