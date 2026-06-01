@@ -1,10 +1,10 @@
 def menu():
-    print("\n--- CO ROBIMY? ---")
+    print("\n---- wybierz program ----")
     print("1. Licz znaki")
     print("2. Sprawdź anagram")
     print("3. Szyfr Cezara")
-    print("4. Reszta (zachłannie)")
-    print("5. Silnia (rekurencja)")
+    print("4. Reszta alg.zachlanny")
+    print("5. Silnia")
     print("6. Bin -> Dec")
     print("7. Dec -> Bin")
     print("0. Wyjdź")
@@ -20,7 +20,7 @@ while True:
     elif wybor == '2':
         s1 = input("Słowo 1: ")
         s2 = input("Słowo 2: ")
-        print("Anagramy?" , sorted(s1.lower()) == sorted(s2.lower()))
+        print("Anagramy : " , sorted(s1.lower()) == sorted(s2.lower()))
 
     elif wybor == '3':
         t = input("Tekst do szyfrowania: ")
@@ -39,7 +39,7 @@ while True:
         print("Zaszyfrowane:", wynik)
 
     elif wybor == '4':
-        kasa = int(input("Ile reszty do wydania? "))
+        kasa = int(input("Ile reszty? "))
         nominaly = [200, 100, 50, 20, 10, 5, 2, 1]
         print("Wydaję:")
         for n in nominaly:
@@ -62,8 +62,7 @@ while True:
         print("Binarnie:", bin(d)[2:])
 
     elif wybor == '0':
-        print("Nara!")
         break
     
     else:
-        print("Nie ma takiej opcji, spróbuj jeszcze raz.")
+        print("zła opcja")

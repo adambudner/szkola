@@ -1,0 +1,23 @@
+html {margin:0;padding:0;}
+body{
+    margin:0;
+    padding:0;
+    font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+    flex-direction: row;
+    
+}
+
+#lewa{
+    padding: 20px;
+    width: 300px;
+    height: 100vh;
+    background-color: #f0f0f0;
+    float: left;
+
+    box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+}
+#prawa{
+    margin: 50px;
+    padding: 20px;
+}

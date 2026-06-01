@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pl-PL">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Style</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <section id="lewa">
+        <p>Podaj Kolor tła: </p>
+        <div class="wyb">
+            <button onclick="kolorTla('indigo')">Indigo</button>
+            <button onclick="kolorTla('steelblue')">SteelBlue</button>
+            <button onclick="kolorTla('olive')">Olive</button>
+        </div>
+        <p>Podaj kolor czcionki</p>
+        <select id="kolor_czcionki">
+            <option value="plum">Plum</option>
+            <option value="black">Black</option>
+            <option value="red">Red</option>
+        </select>
+        <p>Podaj rozmiar czcionki w procentach</p>
+        <input type="text" id="inp_rozmiar">
+        <p>Czy rysunek ma mieć ramkę?</p>
+        <input type="checkbox" name="" id="chbox_ramka"> Rysuj ramkę
+        <p>Jaki typ punktora listy</p>
+        <div class="wyb">
+            <input type="radio" name="punkt" id=""> Dysk
+            <input type="radio" name="punkt" id=""> Kwadrat
+            <input type="radio" name="punkt" id=""> Okrąg
+        </div>
+    </section>
+    <section id="prawa">
+        <div id="style_content">
+            <p>półwysep Gibraltar</p> <br>
+            <ul>
+                <li>Element 1</li>
+                <li>Element 2</li>
+                <li>Element 3</li>
+            </ul> <br>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Veniam quibusdam accusamus doloremque.</p>
+        </div>
+    </section>
+
+
+</body>
+</html>
