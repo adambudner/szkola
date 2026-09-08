@@ -26,11 +26,16 @@ const server = http.createServer( (req, res)=>{
             res.end(html);
             break;
         case "POST;/action1":
+            let body = "";
             req.on('data', (chunk)=>{
                 console.log("kawałek danych:" + chunk.toString());
-                res.writeHead(200, {"content-type":"text/plain;charset=utf8"});
-                res.end("Serwer odebrał dane od klienta");
+                body+=chunk;
             }); 
+            req.on('end', ()=>{
+                res.writeHead(200, {"content-type":"text/plain;charset=utf8"});
+                res.end("Serwer odebrał dane od klienta " + body);
+            });
+
             break;
 
         default:
