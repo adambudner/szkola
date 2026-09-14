@@ -132,17 +132,23 @@ function sendInput(){
                     }
                     if(cleanInput.includes("min")){
                         if (separator === ":"){
-                            let min=Number.MAX_SAFE_INTEGER;
-                            for(let i=cell1_instance.dataset.row; i<=cell2_instance.dataset.row; i++){
-                                for(let j = cell1_instance.dataset.col; j<=cell2_instance.dataset.col; j++){
-                                    if(Number(document.querySelector(`td[data-row="${i}"][data-col="${j}"]`).innerText) < min){
-                                        if (Number(document.querySelector(`td[data-row="${i}"][data-col="${j}"]`).innerText) != 0){
-                                            min = Number(document.querySelector(`td[data-row="${i}"][data-col="${j}"]`).innerText);
+                            try{
+                                let min=Number.MAX_SAFE_INTEGER;
+                                for(let i=cell1_instance.dataset.row; i<=cell2_instance.dataset.row; i++){
+                                    for(let j = cell1_instance.dataset.col; j<=cell2_instance.dataset.col; j++){
+                                        if(Number(document.querySelector(`td[data-row="${i}"][data-col="${j}"]`).innerText) < min){
+                                            if (Number(document.querySelector(`td[data-row="${i}"][data-col="${j}"]`).innerText) != 0){
+                                                min = Number(document.querySelector(`td[data-row="${i}"][data-col="${j}"]`).innerText);
+                                            }
                                         }
                                     }
                                 }
+                                infoWynik.innerText=min;
                             }
-                            infoWynik.innerText=min;
+                            catch (error){
+                                infoWynik.innerText = "Błąd podczas wykonywania polecenia -> " + error;
+                            }
+
                         }
                         else{
                             infoWynik.innerText="Błąd składni! Polecenie min posiada jedynie wyszukiwanie obszarowe";
