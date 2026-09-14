@@ -1,0 +1,29 @@
+table {
+  border-collapse: collapse;
+}
+td {
+  border: 1px solid #ccc;
+  width: 90px;
+  height: 45px;
+  text-align: center;
+  cursor: pointer; 
+  user-select: none; 
+}
+.num{
+  font-weight: bold;
+  background-color: #f0f0f0;
+}
+
+td.active {
+  border: 2px solid #00d7b0; 
+  background-color: #e6f2ff;
+}
+
+#editor {
+  margin-top: 5px;
+  padding: 5px;
+  width: 200px;
+}
+button{
+    height:30px;
+}
