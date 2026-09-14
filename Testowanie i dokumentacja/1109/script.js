@@ -148,12 +148,12 @@ function sendInput(){
                             catch (error){
                                 infoWynik.innerText = "Błąd podczas wykonywania polecenia -> " + error;
                             }
-
                         }
                         else{
                             infoWynik.innerText="Błąd składni! Polecenie min posiada jedynie wyszukiwanie obszarowe";
                         }
                     }
+                    
                     // row-y
                     // col-x
                 } else {
