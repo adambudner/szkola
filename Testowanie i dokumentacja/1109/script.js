@@ -25,14 +25,16 @@ for (let i = 1; i <= il_x; i++) {
 table.innerHTML = structure;
 
 table.addEventListener("click", (e)=>{
-    if (e.target.tagName === "TD"){
+    if (e.target.tagName === "TD" && !e.target.classList.contains("num")){
         if (chosen){
             chosen.classList.remove('active');
         }
         chosen = e.target;
         chosen.classList.add("active");
+        document.getElementById("infoActive").innerText = "X:"+e.target.dataset.col+"Y:"+e.target.dataset.row
     }
-    document.getElementById("infoActive").innerText = "X:"+e.target.dataset.col+"Y:"+e.target.dataset.row
+    
+    
 });
 function sendInput(){
     let textInput = input.value;
