@@ -37,3 +37,7 @@ button{
   margin-top: 10px;
   gap: 10px;
 }
+p{
+  margin: 10px;
+  text-align: center;
+}
