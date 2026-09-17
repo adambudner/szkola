@@ -6,7 +6,7 @@ const input = document.getElementById("editor");
 const info = document.getElementById("info");
 const infoWynik = document.getElementById("infoWynik");
 let chosen = null;
-let statusBarCode=0;
+let statusBoxCode=0;
 
 let structure='';
 structure+='<tr>'
@@ -89,7 +89,7 @@ function sendInput(){
                                 infoWynik.innerText = wynik;
                             } catch (error) {
                                 infoWynik.innerText = "Błąd podczas wykonywania polecenia -> " + error;
-                                statusBarCode=1;
+                                statusBoxCode=1;
                             }
                         } 
                         else if (separator === ":") {
@@ -104,7 +104,7 @@ function sendInput(){
                             }
                             catch (error){
                                 infoWynik.innerText = "Błąd podczas wykonywania polecenia -> " + error;
-                                statusBarCode=1;
+                                statusBoxCode=1;
                             }
                         }
                     }
@@ -118,7 +118,7 @@ function sendInput(){
                                 infoWynik.innerText = wynik;
                             } catch (error) {
                                 infoWynik.innerText = "Błąd podczas wykonywania polecenia -> " + error;
-                                statusBarCode=1;
+                                statusBoxCode=1;
                             }
                         } 
                         else if (separator === ":") {
@@ -133,7 +133,7 @@ function sendInput(){
                             }
                             catch (error){
                                 infoWynik.innerText = "Błąd podczas wykonywania polecenia -> " + error;
-                                statusBarCode=1;
+                                statusBoxCode=1;
                             }
                         }
                     }
@@ -154,12 +154,12 @@ function sendInput(){
                             }
                             catch (error){
                                 infoWynik.innerText = "Błąd podczas wykonywania polecenia -> " + error;
-                                statusBarCode=1;
+                                statusBoxCode=1;
                             }
                         }
                         else{
                             infoWynik.innerText="Błąd składni! Polecenie min posiada jedynie wyszukiwanie obszarowe";
-                            statusBarCode=2;
+                            statusBoxCode=2;
                         }
                     }
                     
@@ -167,19 +167,19 @@ function sendInput(){
                     // col-x
                 } else {
                     info.innerText = "Błąd: Podane komórki nie istnieją.";
-                    statusBarCode=2;
+                    statusBoxCode=2;
                 }
             } else {
                 info.innerText = "Błąd składni! Brak rozdzielenia komórek bądz brak przecinków";
-                statusBarCode=2;
+                statusBoxCode=2;
             }
         } else {
             info.innerText = "Błąd składni! Brak ; lub :";
-            statusBarCode=2;
+            statusBoxCode=2;
         }
     }
     } else {
         info.innerText = "Należy wprowadzić dane";
-        statusBarCode=2;
+        statusBoxCode=2;
     }
 }
