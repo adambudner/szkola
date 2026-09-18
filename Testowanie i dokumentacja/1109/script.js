@@ -6,7 +6,6 @@ const input = document.getElementById("editor");
 const info = document.getElementById("info");
 const infoWynik = document.getElementById("infoWynik");
 let chosen = null;
-let statusBoxCode=0;
 
 let structure='';
 structure+='<tr>'
@@ -89,7 +88,6 @@ function sendInput(){
                                 infoWynik.innerText = wynik;
                             } catch (error) {
                                 infoWynik.innerText = "Błąd podczas wykonywania polecenia -> " + error;
-                                statusBoxCode=1;
                             }
                         } 
                         else if (separator === ":") {
@@ -104,7 +102,6 @@ function sendInput(){
                             }
                             catch (error){
                                 infoWynik.innerText = "Błąd podczas wykonywania polecenia -> " + error;
-                                statusBoxCode=1;
                             }
                         }
                     }
@@ -118,7 +115,6 @@ function sendInput(){
                                 infoWynik.innerText = wynik;
                             } catch (error) {
                                 infoWynik.innerText = "Błąd podczas wykonywania polecenia -> " + error;
-                                statusBoxCode=1;
                             }
                         } 
                         else if (separator === ":") {
@@ -133,7 +129,6 @@ function sendInput(){
                             }
                             catch (error){
                                 infoWynik.innerText = "Błąd podczas wykonywania polecenia -> " + error;
-                                statusBoxCode=1;
                             }
                         }
                     }
@@ -144,7 +139,7 @@ function sendInput(){
                                 for(let i=cell1_instance.dataset.row; i<=cell2_instance.dataset.row; i++){
                                     for(let j = cell1_instance.dataset.col; j<=cell2_instance.dataset.col; j++){
                                         if(Number(document.querySelector(`td[data-row="${i}"][data-col="${j}"]`).innerText) < min){
-                                            if (Number(document.querySelector(`td[data-row="${i}"][data-col="${j}"]`).innerText) != 0){
+                                            if (Number(document.querySelector(`td[data-row="${i}"][data-col="${j}"]`).innerText) != ""){
                                                 min = Number(document.querySelector(`td[data-row="${i}"][data-col="${j}"]`).innerText);
                                             }
                                         }
@@ -154,12 +149,33 @@ function sendInput(){
                             }
                             catch (error){
                                 infoWynik.innerText = "Błąd podczas wykonywania polecenia -> " + error;
-                                statusBoxCode=1;
                             }
                         }
                         else{
                             infoWynik.innerText="Błąd składni! Polecenie min posiada jedynie wyszukiwanie obszarowe";
-                            statusBoxCode=2;
+                        }
+                    }
+                    if(cleanInput.includes("max")){
+                        if (separator === ":"){
+                            try{
+                                let min=Number.MIN_SAFE_INTEGER;
+                                for(let i=cell1_instance.dataset.row; i<=cell2_instance.dataset.row; i++){
+                                    for(let j = cell1_instance.dataset.col; j<=cell2_instance.dataset.col; j++){
+                                        if(Number(document.querySelector(`td[data-row="${i}"][data-col="${j}"]`).innerText) > min){
+                                            if (Number(document.querySelector(`td[data-row="${i}"][data-col="${j}"]`).innerText) != ""){
+                                                min = Number(document.querySelector(`td[data-row="${i}"][data-col="${j}"]`).innerText);
+                                            }
+                                        }
+                                    }
+                                }
+                                infoWynik.innerText=min;
+                            }
+                            catch (error){
+                                infoWynik.innerText = "Błąd podczas wykonywania polecenia -> " + error;
+                            }
+                        }
+                        else{
+                            infoWynik.innerText="Błąd składni! Polecenie min posiada jedynie wyszukiwanie obszarowe";
                         }
                     }
                     
@@ -167,19 +183,15 @@ function sendInput(){
                     // col-x
                 } else {
                     info.innerText = "Błąd: Podane komórki nie istnieją.";
-                    statusBoxCode=2;
                 }
             } else {
                 info.innerText = "Błąd składni! Brak rozdzielenia komórek bądz brak przecinków";
-                statusBoxCode=2;
             }
         } else {
             info.innerText = "Błąd składni! Brak ; lub :";
-            statusBoxCode=2;
         }
     }
     } else {
         info.innerText = "Należy wprowadzić dane";
-        statusBoxCode=2;
     }
 }
